@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="This is a cheat sheet of git commands..There are many more commands that’s will be required accordingly. These are basic command that are used mostly." />
+    <title>GIT CHEAT</title>
+</head>
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Langar&display=swap');
+  * {box-sizing: border-box;}
+    .command {display: block; padding: 3px;}
+    .container {background: linear-gradient(to right, #8360c3, #2ebf91);padding: 10px;width: 50%; border: 1px solid tomato;}
+    .container:nth-child(3n){width:100%}
+    .main-container{width: 90%; margin: 10px auto;border: 3px solid grey;display: flex;flex-wrap: wrap;}
+    b {color: rgb(255, 255, 255);}
+    h1 {color: rgb(195, 171, 233);font-family: 'Langar', cursive;}
+    h4 {color: rgb(121, 218, 92);}
+    h3 {color: rgb(252, 0, 0);text-decoration: underline overline dotted;text-align: center;}
+    h5 {color: wheat;text-align: center;}
+
+    .animate{
+        margin: auto;
+        overflow: hidden;
+        border-right: .15em solid;
+        letter-spacing: .15em;
+        white-space: nowrap;
+        animation: 
+            typing 10s steps(30) infinite,
+            blink-caret .75s step-end infinite;}
+    @keyframes typing{0%{width: 0;}100%{width: 30ch;}}
+    @keyframes blink-caret {from, to { border-color: transparent } 50% { border-color: rgb(212, 151, 214) }}
+</style>
+<body style="box-sizing: border-box;background: linear-gradient(to left, #0f2027, #203a43, #2c5364);">
+<h1 class="animate">GIT COMMAND – CHEAT SHEET</h1>
+<h5>Developed By : Rahul Deb Bhandari</h5>
+<h4><i> It is a open source distributed version control system to handle projects. It have three area : Working Area , Staging Area , Local Repository Area.</i></h4>
+
+<div class="main-container">
+    <div class="container">
+        <h3>CREATE REPOSITORY</h3>
+        <span class="command"><b>git config –-global user.name [username] : </b>Configuration of usernameglobally.</span>    
+        <span class="command"><b>git config –-global user.name : </b> To show configured username.</span>
+        <span class="command"><b>git config –-global user.email[email address] : </b> Configuration of user email addressglobally.</span>     
+        <span class="command"><b>git init : </b> To initialize git folder into working directory.</span>
+    </div>
+    
+    <div class="container">
+        <h3>SYNC REPOSITORY</h3>
+        <span class="command"><b>git remote add origin [repository link] :</b> Link a remote repositorywith local repository.</span>
+        <span class="command"><b>git pull origin master :</b> Copy all the files from of remote repositorytothe master branch of local repository.</span>
+        <span class="command"><b>git push origin master :</b> Copy all the files from the master branch of local repository to remote repository</span>
+        <span class="command"><b>git fetch [repository link] [branch] :</b> Fetches a specific , from the repository. Leave off to fetch all remote refs.</span>
+    </div>
+    
+    
+    
+    <div class="container"">
+        <h3>MAKE CHANGES</h3>
+        <span class="command"><b>git status :</b> To show current status of repository.</span>
+        <span class="command"><b>git status –s :</b> To show current status of repository in short.</span>
+        <span class="command"><b>git add [filename] :</b> To add given untracked file of working directory into staging area.</span>
+        <span class="command"><b>git add –A / git add –-all / git add . :</b> To add all untracked files of working directory into staging area.</span>
+        <span class="command"><b>git mv [old file name] [new file name] :</b> To rename file.</span>
+        <span class="command"><b>git checkout [filename] :</b> Roll back to the previous commited content.</span>
+        <span class="command"><b>git checkout –f :</b> Roll back to the previous commited content for all files.</span>
+        <span class="command"><b>git diff :</b> Compare all files of working area with staging area.</span>
+        <span class="command"><b>git diff --staged :</b> Compare staging area with last commit.</span>
+        <span class="command"><b>git diff HEAD :</b> Show difference between working directory and last commit.</span>
+        <span class="command"><b>git diff –cached :</b> Show difference between staged changes and last commit.</span>
+        <span class="command"><b>git reset–[filename] :</b> Remove given file from staging area to working directory.</span>
+        <span class="command"><b>git reset :</b> Reset staging area to match most recent commit, but leave the working directory unchanged.</span>
+        <span class="command"><b>git reset –hard :</b> Reset staging area and working directory to match most recent commit and overwrites all changes in the working directory.</span>
+        <span class="command"><b>git clean -n :</b> Shows which files would be removed from working directory.</span>
+        <span class="command"><b>git clean -f :</b> To execute the clean.</span>
+        <span class="command"><b>git commit –m “[message]” :</b> To make commit with a mesaage.</span>
+        <span class="command"><b>git commits –p -1 :</b> To check last 1 commits.</span>
+        <span class="command"><b>git log :</b> Check all status according to commits.</span>
+        <span class="command"><b>git log [branch name] :</b> Check all status according to commits of a specific branch name.</span>
+        <span class="command"><b>git log –oneline :</b> Check all status according to commits in one line</span>
+    </div>
+    <div class="container">
+        <h3>PARALLEL DEVELOPMENT</h3>
+        <span class="command"><b>git branch :</b> Show list of branch and highlight the branch that we working on</span>
+        <span class="command"><b>gitbrach [branch name] :</b> Create new branch </span>
+        <span class="command"><b>git checkout [branch name] :</b> To switch the branch</span>
+        <span class="command"><b>git merge [branch name] :</b> Merge content or changes of given branch name with present working branch</span>
+        <span class="command"><b>git rebase [base branch name] :</b> Let, we create a branch “b2” with the base of master after that if there are any changes made in master branch which is the base of branch “b2” .So we can update the branch “b2” with the new base of master</span>
+        <span class="command"><b>git branch -d [localBranchName] :</b> Delete branch locally</span>
+        <span class="command"><b>git push [remote name] -d [remoteBranchName] :</b> Delete branch remotely. (Most of the case remote name : origin)</span>
+    </div>
+    <div class="container">
+        <h3>OTHERS</h3>
+        <span class="command"><b>touch [filename] :</b> To make a blank file.</span>
+        <span class="command"><b>rm [filename] :</b> Delete the file from working directory and systems also.</span>
+        <span class="command"><b>git archive [branch name] :</b> To create zip file of given branch name to share with other developer</span>
+        <span class="command"><b>git bundle create:</b></span>
+        <span class="command"><b>git stash :</b> To save all uncommited changes to temoporarydiretory</span>
+        <span class="command"><b>git ls-files :</b> List of all files on the present working branch</span>
+        <span class="command"><b>ls –lart :</b> To show all hidden file .</span>
+    </div>
+    
+</div>
+<h4><i>There are many more commands that’s will be required accordingly. These are basic command that are used mostly.</i><br>
+Change if any thing need to be change or add in "dev" branch</h4>
+
+
+</body>
+</html>
